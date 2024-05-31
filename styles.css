@@ -12,7 +12,9 @@
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -36,10 +38,18 @@
 }
 
 /* Address Section */
+.nav-address {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 150px;
+    margin: 0 10px;
+}
+
 .add-first {
     color: #cccccc;
     font-size: 0.85rem;
-    margin-left: 15px;
+    margin-right: 5px;
 }
 
 .add-sec {
@@ -55,11 +65,13 @@
 /* Search Section */
 .nav-search {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: pink;
-    width: 620px;
+    flex: 3;
     height: 40px;
     border-radius: 4px;
+    margin: 0 10px;
+    min-width: 200px;
 }
 
 .search-select {
@@ -72,7 +84,7 @@
 }
 
 .search-input {
-    width: 100%;
+    flex: 1;
     font-size: 1rem;
     border: none;
 }
@@ -94,6 +106,14 @@
 }
 
 /* Sign-in and Cart Section */
+.nav-signin, .nav-return, .nav-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
 span {
     font-size: 0.7rem;
 }
@@ -119,16 +139,20 @@ span {
     display: flex;
     color: white;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-wrap: wrap;
 }
 
 .panel-ops p {
     display: inline;
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
 .panel-ops {
-    width: 70%;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
     font-size: 0.85rem;
 }
 
@@ -167,28 +191,26 @@ span {
 .shop-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-color: #e2e7e6;
 }
 
 .box {
-    height: 400px;
-    width: 23%;
+    flex: 1 1 21%;
     background-color: white;
-    padding: 20px 0px 15px;
-    margin-top: 15px;
+    margin: 15px;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .box-img {
     height: 300px;
     background-size: cover;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .box-content {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 0 1rem;
 }
 
 .box-content p {
@@ -213,13 +235,15 @@ footer {
 .foot-panel2 {
     background-color: #222f3d;
     color: white;
-    height: 300px;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 ul {
     margin-top: 20px;
+    list-style: none;
 }
 
 ul a {
@@ -245,6 +269,7 @@ ul a {
     height: 80px;
     font-size: 0.7rem;
     text-align: center;
+    padding-top: 20px;
 }
 
 .pages {
@@ -253,4 +278,42 @@ ul a {
 
 .copyright {
     padding-top: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .shop-section .box {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-section .box {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar, .panel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-search {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .nav-signin, .nav-return, .nav-cart {
+        flex-direction: row;
+    }
+    
+    .panel-ops {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .panel-ops p {
+        margin: 5px 10px;
+    }
 }
